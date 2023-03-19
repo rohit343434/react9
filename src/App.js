@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import User from './User'
 
-function App() {
+
+const App = () => {
+ const [data,setdata]=useState(0)
+
+ function updateData(){
+  setdata(data+1)
+ }
+console.warn("__________")
+
+  // let data="rohitmakwana"
+  // function apple(){
+  //   data="peter"
+  //   alert(data)
+  //   console.warn("-----------------")
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   <>
+   <User/>
+    <div>
+      <h1>{data}
+      </h1>
+      <button onClick={updateData}>click me</button>
+    </div></>
+
+  )
 }
 
-export default App;
+export default App
